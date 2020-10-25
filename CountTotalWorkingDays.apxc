@@ -1,0 +1,17 @@
+public class CountTotalWorkingDays {
+    public static Integer countTotalWorkingDays(date startDate , date endDate){
+Integer workingDays = 0;
+for(Integer i = 1;i<startDate.daysBetween(endDate);i++)
+{
+Date dateValue= startDate+i;
+Datetime dt = DateTime.newInstance(dateValue,Time.newInstance(0, 0, 0, 0));
+String dayOfWeek=dt.format('EEEE');
+if(!(dayOfWeek == 'Saturday' || dayOfWeek == 'Sunday')){
+workingDays++;
+}
+}
+
+return workingDays;
+}
+
+}
